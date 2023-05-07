@@ -42,7 +42,7 @@ Your folder structure should look something like this:
 ```
 .
 ├── README.md
-└── mickyginger
+└── GeorgeJones
     └── js-calculator
 ```
 
