@@ -8,13 +8,13 @@ Welcome to the GA Bahrain SEI 04 student homework repository. This is the place 
 
 First, [fork](https://help.github.com/articles/fork-a-repo) this repository by clicking the fork button.
 
-![folk-repo](https://cloud.githubusercontent.com/assets/40461/10177089/43f10122-66f0-11e5-86b6-e4a6d23160f7.png)
+![folk-repo](./ReadmeAssets/ForkBtn.png)
 
 ### Step 2. Clone your fork
 
 Next, clone your fork to your machine.
 
-![clone](https://cloud.githubusercontent.com/assets/40461/10177745/b394027e-66f3-11e5-8cc5-20c01c9a7785.png)
+![clone](./ReadmeAssets/CloneRepo.png)
 
 ### Step 3. Create your directory
 
@@ -50,11 +50,27 @@ Your folder structure should look something like this:
 
 At the end of each day (or first thing each morning), ensure all of your homework is committed to git and pushed to your GitHub fork of the student work repository.
 
+Do this with the following commands:
+`git add .`
+`git commit -m "A meaningful Commit message"`
+`git push`
+
 ### Step 3. Submit a pull request
 
 Then create a [pull request](https://help.github.com/articles/using-pull-requests) from your fork. This will automatically include all the commits you have made to the repository.
 
-![pull-request](https://cloud.githubusercontent.com/assets/40461/10177944/ceec1308-66f4-11e5-8603-b918db3ca45e.png)
+Click Pull Requests
+
+![pull-request](./ReadmeAssets/PullRequestsBtn.png)
+
+Click New Pull Request
+
+![new-pull-request](./ReadmeAssets/NewPullRequest.png)
+
+Click Create Pull Request
+
+![new-pull-request](./ReadmeAssets/CreatePullRequest.png)
+
 
 ### Step 3. Add a title and comment
 
@@ -69,6 +85,8 @@ Then add a comment to the pull request. Every comment should follow this format:
 * What was a challenge?
 * Any other comments
 ```
+Click Create Pull Request
+![pull-request](./ReadmeAssets/PullRequestComment.png)
 
 The instructional team will then review your pull request, and use the main repository as the source to monitor your work. If you do not issue a pull request, it will appear to us that you have not completed the assignments for the previous day, and it will be recorded as such.
 
