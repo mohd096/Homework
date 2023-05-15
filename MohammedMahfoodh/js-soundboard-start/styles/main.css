@@ -1,0 +1,64 @@
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Monoton', 'cursive';
+    background-color: black;
+    font-size:15px;
+  }
+  
+  .main{
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  #logo{
+    display: center;
+    margin: 100px 0 0 0;
+  }
+  
+  .grid-container{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    row-gap: 10px;
+    column-gap:10px;
+    padding: 50px 200px ;
+  }
+  
+  
+  .grid-item{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: black;
+    padding: 50px 50px;
+    text-align: center;
+    color: white;
+    border: 0.5px solid white;
+  }
+  
+  .grid-item:hover{
+    cursor: pointer;
+    background-image: url(https://i.gifer.com/LIdO.gif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+  }
+  
+  .rainbow{
+    background: linear-gradient(90deg, #f04e4e, #3FEEE6,  #017ff5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 400ms ease;
+  }
+  
+  .rainbow:hover{
+    color:rgb(255, 251, 0);
+  }
