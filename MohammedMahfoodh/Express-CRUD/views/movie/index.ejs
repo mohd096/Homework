@@ -1,0 +1,20 @@
+<h3>Movie Index</h3>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Director</th>
+        <th>Genre</th>
+        <th>Fiction</th>
+        <th>Duration</th>
+    </tr>
+    <% movies.forEach(function (movie) { %>
+        <tr>
+            <td><%= movie.title %></td>
+            <td><%= movie.director %></td>
+            <td><%= movie.genre %></td>
+            <td><%= movie.isFiction %></td>
+            <td><%= movie.duration %></td>
+        </tr>
+    <% }) %>
+</table>
