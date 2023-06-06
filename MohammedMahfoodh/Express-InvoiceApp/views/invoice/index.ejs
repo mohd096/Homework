@@ -1,0 +1,34 @@
+<h3>invoice Index</h3>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Supplier</th>
+        <th>Genre</th>
+        <th>Fiction?</th>
+        <th>Pages</th>
+    </tr>
+    <% invoices.forEach(function(invoice){ %>
+        <tr>
+            <td>
+                <a href="/invoice/detail?id=<%= invoice._id %>">
+                    <%= invoice.title %>
+                </a>
+                
+            </td>
+            <td><% invoice.supplier.forEach(function(obj, i){%>
+                <%= i + 1 %>:<%=obj.name%>
+
+            <%}) %></td>
+            <td><%= invoice.genre %> </td>
+            <td><%= invoice.isFiction %> </td>
+            <td><%= invoice.numberOfPages %> </td>
+            <td>
+                <form method="POST" action="/invoice/delete?id=<%=invoice._id%>">
+                    <button type="submit">DELETE</button>
+                </form>
+                <a href="/invoice/edit?id=<%=invoice._id%>">UPDATE</a>
+            </td>
+        </tr>
+    <% }) %>
+</table>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Library</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <h1>This Is A Shared Layout</h1>
+<nav>
+    <a href="/invoice/add">Add New invoice</a>
+    <a href="/supplier/add">Add New subblier</a>
+    <a href="/invoice/Index"> invoice Library</a>
+
+    <% if (currentUser) { %>
+        <a href="/auth/logout"> Log Out</a>
+        <%= currentUser.firstName%>
+        <% } else { %>
+    <a href="/auth/signup"> Sign Up</a>
+    <a href="/auth/signin"> Sign In</a>
+<% } %>
+</nav>
+    <%- body %>
+
+    <h3>Shared Footer</h3>
+</body>
+</html>

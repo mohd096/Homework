@@ -1,0 +1,33 @@
+<h3>Add new Invoice Form</h3>
+
+<form method="POST" action="/invoice/add">
+    <div>
+        <label>Title</label>
+        <input type="text" name="title">
+    </div>
+
+    <div>
+        <label>Supplier</label>
+        <select name="supplier" multiple="multiple">
+            <% suppliers.forEach(function(supplier){%>
+                <option value="<%= supplier._id %>"><%= supplier.name %></option>
+            <% }) %>
+        </select>
+    </div>
+
+    <div>
+        <label>Genre</label>
+        <input type="text" name="genre">
+    </div>
+
+    <div>
+        <label>Is Fiction?</label>
+        <input type="text" name="isFiction">
+    </div>
+
+    <div>
+        <label>Pages</label>
+        <input type="text" name="numberOfPages">
+    </div>
+    <input type="submit">
+</form>

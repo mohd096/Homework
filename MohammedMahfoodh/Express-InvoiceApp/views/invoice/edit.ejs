@@ -1,0 +1,30 @@
+<h3>Edit invoice Form</h3>
+
+<form method="POST" action="/invoice/edit"> 
+    <div>
+        <label>Title</label>
+        <input type="text" name="title" value="<%= invoice.title %>">
+    </div>
+
+    <div>
+        <label>Supplier</label>
+        <input type="text" name="supplier" value="<%= invoice.supplier %>">
+    </div>
+
+    <div>
+        <label>Genre</label>
+        <input type="text" name="genre" value="<%= invoice.genre %>">
+    </div>
+
+    <div>
+        <label>Is Fiction?</label>
+        <input type="text" name="isFiction" value="<%= invoice.isFiction %>">
+    </div>
+
+    <div>
+        <label>Pages</label>
+        <input type="text" name="numberOfPages" value="<%= invoice.numberOfPages %>">
+    </div>
+    <input type="hidden" name ="id" value="<%=invoice._id%>">
+    <input type="submit">
+</form>

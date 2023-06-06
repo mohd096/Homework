@@ -1,0 +1,15 @@
+<h2>All Our Suppliers</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    <% suppliers.forEach(function(supplier){ %>
+        <tr>
+            <td><%= supplier.name %></td>
+            <td><%= supplier.email %></td>
+        </tr>
+
+        <% })%>
+</table>
