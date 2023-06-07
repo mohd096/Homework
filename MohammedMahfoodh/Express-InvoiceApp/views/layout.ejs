@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Library</title>
+    <title>Invoice App</title>
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <h1>This Is A Shared Layout</h1>
+    <h1>Invoice App</h1>
 <nav>
-    <a href="/invoice/add">Add New invoice</a>
-    <a href="/supplier/add">Add New subblier</a>
-    <a href="/invoice/Index"> invoice Library</a>
+    <button><a href="/invoice/add">Add New invoice</a></button>
+    <button><a href="/supplier/add">Add New subblier</a></button>
+    <button><a href="/invoice/Index"> Invoice List</a></button>
 
     <% if (currentUser) { %>
-        <a href="/auth/logout"> Log Out</a>
+        <button><a href="/auth/logout"> Log Out</a></button>
         <%= currentUser.firstName%>
         <% } else { %>
     <a href="/auth/signup"> Sign Up</a>

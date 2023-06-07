@@ -2,27 +2,27 @@
 
 <table>
     <tr>
-        <th>Title</th>
+        <th>Item Name</th>
         <th>Supplier</th>
-        <th>Genre</th>
-        <th>Fiction?</th>
-        <th>Pages</th>
+        <th>Quantity</th>
+        <th>Paid?</th>
+        <th>Amount</th>
     </tr>
     <% invoices.forEach(function(invoice){ %>
         <tr>
             <td>
                 <a href="/invoice/detail?id=<%= invoice._id %>">
-                    <%= invoice.title %>
+                    <%= invoice.itemName %>
                 </a>
                 
             </td>
             <td><% invoice.supplier.forEach(function(obj, i){%>
-                <%= i + 1 %>:<%=obj.name%>
+                <%=obj.name%>
 
             <%}) %></td>
-            <td><%= invoice.genre %> </td>
-            <td><%= invoice.isFiction %> </td>
-            <td><%= invoice.numberOfPages %> </td>
+            <td><%= invoice.quantity %> </td>
+            <td><%= invoice.paid %> </td>
+            <td><%= invoice.amount %> </td>
             <td>
                 <form method="POST" action="/invoice/delete?id=<%=invoice._id%>">
                     <button type="submit">DELETE</button>

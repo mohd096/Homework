@@ -2,8 +2,8 @@
 
 <form method="POST" action="/invoice/edit"> 
     <div>
-        <label>Title</label>
-        <input type="text" name="title" value="<%= invoice.title %>">
+        <label>Item Name</label>
+        <input type="text" name="itemName" value="<%= invoice.itemName %>">
     </div>
 
     <div>
@@ -12,18 +12,18 @@
     </div>
 
     <div>
-        <label>Genre</label>
-        <input type="text" name="genre" value="<%= invoice.genre %>">
+        <label>Quantity</label>
+        <input type="text" name="quantity" value="<%= invoice.quantity %>">
     </div>
 
     <div>
-        <label>Is Fiction?</label>
-        <input type="text" name="isFiction" value="<%= invoice.isFiction %>">
+        <label>Paid?</label>
+        <input type="text" name="paid" value="<%= invoice.paid %>">
     </div>
 
     <div>
-        <label>Pages</label>
-        <input type="text" name="numberOfPages" value="<%= invoice.numberOfPages %>">
+        <label>Amount</label>
+        <input type="text" name="amount" value="<%= invoice.amount %>">
     </div>
     <input type="hidden" name ="id" value="<%=invoice._id%>">
     <input type="submit">

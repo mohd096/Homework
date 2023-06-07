@@ -30,7 +30,7 @@ exports.invoice_create_post = (req, res) => {
 
 exports.invoice_index_get = async (req, res) => {
     try{
-        const invoices = await Invoice.find().populate('author')
+        const invoices = await Invoice.find().populate('supplier')
         console.log(invoices)
         res.render('invoice/index', { invoices })
         // res.render('invoice/index', { invoices: invoices }) //does the same thing
@@ -67,7 +67,7 @@ exports.invoice_delete = async (req, res) => {
 
 exports.invoice_detail_get = async (req, res) => {
     try {
-        const invoice = await Invoice.findById(req.query.id)
+        const invoice = await Invoice.findById(req.query.id).populate('supplier')
         res.render('invoice/detail', {invoice} )
     } catch (error) {
         console.log(error.message)

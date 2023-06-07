@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 
 const invoiceSchema = mongoose.Schema({
-    title: String,
-    genre: String,
-    isFiction: Boolean,
-    numberOfPages: Number,
+    itemName: String,
+    quantity: Number,
+    paid: Boolean,
+    amount: Number,
     supplier: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Supplier'
