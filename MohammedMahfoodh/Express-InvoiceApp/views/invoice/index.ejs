@@ -1,7 +1,7 @@
 <h3>invoice Index</h3>
 
-<table>
-    <tr>
+<table >
+    <tr >
         <th>Item Name</th>
         <th>Supplier</th>
         <th>Quantity</th>
@@ -27,8 +27,12 @@
                 <form method="POST" action="/invoice/delete?id=<%=invoice._id%>">
                     <button type="submit">DELETE</button>
                 </form>
-                <a href="/invoice/edit?id=<%=invoice._id%>">UPDATE</a>
+                <button><a href="/invoice/edit?id=<%=invoice._id%>">UPDATE</a></button>
+
+                        </tr>   
+
             </td>
-        </tr>
+
     <% }) %>
 </table>
+

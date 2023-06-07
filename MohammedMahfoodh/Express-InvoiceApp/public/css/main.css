@@ -1,6 +1,8 @@
 body {
     background-color: rgb(174, 250, 250);
     text-align: center;
+    font-family:sans-serif;
+
 }
 #inv{
     text-align: center;
@@ -9,4 +11,10 @@ body {
     position: absolute;
     right:2% ;
     top: 5% ;
+}
+table{
+    display: flex;
+    justify-content: center;
+    text-align:justify;
+    font-size: 18px;
 }
