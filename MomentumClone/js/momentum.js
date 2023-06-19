@@ -41,27 +41,23 @@
 // .catch(error => {
 //     console.log(error)
 // })
-axios({
+const axios = require('axios');
 
-    method: 'get',
-    url: 'https://quotes.rest/quote/random?language=en&limit=200&Bearer=1234'
-})
-.then(response => {
-    console.log(response)
-    // console.log(response.data.weather[0].main)
-    // console.log(response.data.main.temp)
-    // console.log(response.data.name)
+const options = {
+  method: 'GET',
+  url: 'https://quotes15.p.rapidapi.com/quotes/random/',
+  params: {
+    language_code: 'en'
+  },
+  headers: {
+    'X-RapidAPI-Key': '845dd5a187msh09d40a5757af55bp114805jsnab1a87c8e16b',
+    'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
+  }
+};
 
-
-
-    // $('body').append(`${response.data.weather[0].main}`)
-    // $('body').append(`${response.data.main.temp}`)
-    // $('body').append(`${response.data.name}`)
-
-
-})
-
-
-.catch(error => {
-    console.log(error)
-})
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
