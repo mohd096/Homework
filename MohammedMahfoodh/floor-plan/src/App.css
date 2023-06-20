@@ -1,0 +1,60 @@
+.CodeSandbox {
+  text-align: center;
+}
+
+.CodeSandbox-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .CodeSandbox-logo {
+    animation: CodeSandbox-logo-spin infinite 20s linear;
+  }
+}
+
+.CodeSandbox-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.CodeSandbox-link {
+  color: #61dafb;
+}
+
+@keyframes CodeSandbox-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* div {
+  border: 1px solid rgb(0, 0, 0);
+  margin: 7px;
+  padding: 6px;
+} */
+div {
+  border: 1px solid grey;
+  margin: 5px;
+  padding: 5px;
+}
+.bedroom {
+  background-color: blue;
+}
+.Kitchen{
+  background-color: orange;
+}
+.Bathroom{
+  background-color: green;
+}
+.Livingroom{
+  background-color: rgb(182, 80, 80);
+}
