@@ -8,7 +8,7 @@ axios({
 
 
 
-    $('body').append(`<p> <img src='${response.data.urls.full}'</p>`)
+    $('body').append(`<p class="image"><img src='${response.data.urls.full}'></p>`);
 
 
 })
@@ -17,14 +17,7 @@ axios({
 .catch(error => {
     console.log(error)
 })
-const icons = {
-    clear: '☀',
-    rain: '️🌧',
-    storm: '⛈',
-    snow: '🌨',
-    mist: '🌫',
-    clouds: '☁',
-  };
+
 axios({
     method: 'get',
     url: 'http://api.openweathermap.org/data/2.5/weather?q=manama&units=metric&appid=2d0d427f7e61ab16def063d85ba4b69d'
@@ -36,12 +29,20 @@ axios({
     console.log(response.data.main.temp)
     console.log(response.data.name)
 
-      
+    const icons = {
+        clear: '☀',
+        rain: '️🌧',
+        storm: '⛈',
+        snow: '🌨',
+        mist: '🌫',
+        clouds: '☁',
+      };
 
 
-    $('body').append(`${response.data.weather[0].main}`)
-    $('body').append(`${response.data.main.temp}`)
-    $('body').append(`${response.data.name}`)
+    $('body').append(`<p class="weather">${icons[response.data.weather[0].main.toLowerCase()]} ${response.data.weather[0].main}</p>`);
+    $('body').append(`<p class="temperature">${response.data.main.temp}</p>`);
+    $('body').append(`<p class="city">${response.data.name}</p>`);
+
 
 
 })
@@ -59,8 +60,8 @@ axios({
     console.log(response.data.content)
     console.log(response.data.author)
 
-    $('body').append(`<h2>'${response.data.content}'</h2>`)
-    $('body').append(`<p>'${response.data.author}'</p>`)
+    $('body').append(`<h2 class="quot">'${response.data.content}'</h2>`)
+    $('body').append(`<p class="auth">'${response.data.author}'</p>`)
 
 })
 
@@ -69,7 +70,7 @@ axios({
 })
 
 console.log(moment().format('LTS'))
-$('body').append(`<h1>'${moment().format('LTS')}'</h1>`)
+$('body').append(`<h1 class="time">${moment().format('LTS')}</h1>`)
 
 
 // const options = {
