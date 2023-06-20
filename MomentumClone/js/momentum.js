@@ -17,17 +17,26 @@ axios({
 .catch(error => {
     console.log(error)
 })
-
+const icons = {
+    clear: '☀',
+    rain: '️🌧',
+    storm: '⛈',
+    snow: '🌨',
+    mist: '🌫',
+    clouds: '☁',
+  };
 axios({
     method: 'get',
     url: 'http://api.openweathermap.org/data/2.5/weather?q=manama&units=metric&appid=2d0d427f7e61ab16def063d85ba4b69d'
 })
+
 .then(response => {
     console.log(response)
     console.log(response.data.weather[0].main)
     console.log(response.data.main.temp)
     console.log(response.data.name)
 
+      
 
 
     $('body').append(`${response.data.weather[0].main}`)
