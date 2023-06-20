@@ -1,0 +1,71 @@
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+.image img{
+    position:absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position: center;
+    z-index: -1;
+  }
+.weather {
+  position:fixed;
+  font-size: 12px;
+  top: 2.5%;
+  left: 93%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: center;
+
+}
+.temperature {
+  position: fixed;
+  top:2%;
+  left: 97%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.city {
+  position: fixed;
+  font-size: 10px;
+  top: 5%;
+  left: 97%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.time {
+  position: absolute;
+  font-size: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.quot {
+  position: absolute;
+  font-size: 12px;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.auth {
+  position: absolute;
+  font-size: 10px;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
