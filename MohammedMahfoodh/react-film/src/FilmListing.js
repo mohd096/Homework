@@ -6,23 +6,25 @@ export default class FilmListing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentFilter: 'ALL',
+      filter : 'ALL',
     };
   }
 
   handleFilterClick = (filter) => {
-    this.setState({ currentFilter: filter });
+    this.setState({ filter });
   };
   render() {
-    const { films } = this.props;
-    const { currentFilter } = this.state;
+    const { films, faves } = this.props;
+    const { filter  } = this.state;
 
-    const filteredFilms = currentFilter === 'FAVES'
-      ? films.filter(film => film.isFavorite)
+    const filteredFilms =
+    filter === 'FAVES'
+      ? films.filter(film => faves.includes(film))
       : films;
-
+      
     const filmRows = filteredFilms.map(film => (
-      <FilmRow key={film.id} film={film} />
+      <FilmRow key={film.id} film={film} onFaveToggle={() => this.props.onFaveToggle(film)}
+      isFave={faves.includes(film)} />
     ));
 
     // let allFilms = this.props.films.map( (film, index) => (TMDB),
@@ -30,10 +32,15 @@ export default class FilmListing extends Component {
     //   <film film = {film}/>
     // ))
 
-    const allFilms = this.props.films.map (
-      film => (<FilmRow film={film}/>
-       )
-    )
+    // const allFilms = this.props.films.map((film) => {
+    //   return (
+    //   <FilmRow
+    //   film={film}
+    //   key={film.id}
+    //   onFaveToggle={() => this.props.onFaveToggle(film)}
+    //   />
+    // )
+    // })
         // I can call another component multiple times with different set of data
         
         // <FilmListing film={film} />
@@ -44,9 +51,7 @@ export default class FilmListing extends Component {
 <div className="film-list">
     <h1 className="section-title">FILMS</h1>
     <div className="film-list-filters">
-        <div className="film-list-filter">
-        <span
-              className={currentFilter === 'ALL' ? 'active' : ''}
+    <div className={`film-list-filter ${this.state.filter === 'ALL' ? 'is-active' : ''}`}> <span
               onClick={() => this.handleFilterClick('ALL')}
             >
           
@@ -54,18 +59,17 @@ export default class FilmListing extends Component {
             </span>
             <span className="section-count">{this.props.films.length}</span>
         </div>
-        <div className="film-list-filter">
+        <div className={`film-list-filter ${this.state.filter === 'FAVES' ? 'is-active' : ''}`}>
         <span
-              className={currentFilter === 'FAVES' ? 'active' : ''}
               onClick={() => this.handleFilterClick('FAVES')}
             >
               FAVES
             </span>
-            <span className="section-count">0</span>
+            <span className="section-count">{faves.length}</span>
         </div>
     </div>
-
-    {allFilms}
+    {filmRows}
+    {/* {allFilms} */}
 </div>
 
     )
