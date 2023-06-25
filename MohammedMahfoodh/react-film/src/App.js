@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import './App.css'
 import FilmListing from './FilmListing'
@@ -20,8 +21,18 @@ export default class App extends Component {
 
   handleDetailsClick = (film) => {
     console.log(`Fetching details for ${film.title}`);
+    const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${TMDB.api_key}&append_to_response=videos,images&language=en`
+
+    axios({
+      method: 'GET',
+      url: url
+    }).then(response => {
+      console.log(response) // take a look at what you get back!
+    })
+    
     this.setState({ selectedFilm: film });
   };
+  
 
   handleFaveToggle = (film) => {
     const { faves } = this.state;
@@ -41,7 +52,7 @@ export default class App extends Component {
 
   render() {
     const { films, faves, current } = this.state;
-
+    // const myString = "The ${film.id} is great"
     
     // const allFilms = this.props.TMDB.films.map (
     //   film => (
@@ -52,11 +63,11 @@ export default class App extends Component {
     //   )
     // )
     return (
-      <div className="App" >
+      // <div className="App" >
         <div className="film-library">
           <FilmListing films={films} faves={faves} onFaveToggle={this.handleFaveToggle} onDetailsClick={this.handleDetailsClick} />
-          <FilmDetails film={current} />
-        </div>
+          <FilmDetails film={current}  />
+        {/* </div> */}
       </div>
 
   

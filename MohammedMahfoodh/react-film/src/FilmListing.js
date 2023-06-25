@@ -51,20 +51,12 @@ export default class FilmListing extends Component {
 <div className="film-list">
     <h1 className="section-title">FILMS</h1>
     <div className="film-list-filters">
-    <div className={`film-list-filter ${this.state.filter === 'ALL' ? 'is-active' : ''}`}> <span
-              onClick={() => this.handleFilterClick('ALL')}
-            >
-          
-            ALL
-            </span>
+    <div className={`film-list-filter ${this.state.filter === 'ALL' ? 'is-active' : ''}`}> 
+    <span onClick={() => this.handleFilterClick('ALL')}> ALL </span>
             <span className="section-count">{this.props.films.length}</span>
         </div>
         <div className={`film-list-filter ${this.state.filter === 'FAVES' ? 'is-active' : ''}`}>
-        <span
-              onClick={() => this.handleFilterClick('FAVES')}
-            >
-              FAVES
-            </span>
+        <span onClick={() => this.handleFilterClick('FAVES')}>FAVES</span>
             <span className="section-count">{faves.length}</span>
         </div>
     </div>
